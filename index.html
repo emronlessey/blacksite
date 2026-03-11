@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini Blacksite (3 Puzzles)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="bar">
+    <div>
+      <div class="title">🚨 MINI BLACKSITE</div>
+      <div class="sub">3 puzzles • simple JS</div>
+    </div>
+
+    <div class="hud" aria-live="polite">
+      <span class="pill">Step <b id="step">1</b>/3</span>
+      <span class="pill">Time <b id="time">02:00</b></span>
+      <span class="pill">Hints <b id="hints">0</b>/3</span>
+      <button id="startBtn" class="primary">Start</button>
+<button id="hintBtn">Hint</button>
+<button id="saveBtn">Save</button>
+<button id="resetBtn" class="danger">Reset</button>
+    </div>
+  </header>
+
+  <main class="card">
+    <h1 id="h1">Loading…</h1>
+    <p id="p" class="muted">—</p>
+
+    <section id="game"></section>
+
+    <div class="actions">
+      <button id="submitBtn">Submit</button>
+      <button id="nextBtn">Next</button>
+    </div>
+
+    <h2 class="muted">Log</h2>
+    <div id="log" class="log"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
