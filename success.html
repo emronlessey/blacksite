@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escape Successful</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<main class="page intro-page">
+
+  <section class="panel intro-panel">
+
+    <p class="small-label">Mission Complete</p>
+
+    <h1 class="site-title">ESCAPE SUCCESSFUL</h1>
+
+    <p class="site-subtitle">You escaped the Blacksite.</p>
+
+    <div class="game-box">
+
+      <p>
+        The containment facility has been breached and you successfully escaped.
+      </p>
+
+      <p>
+        Your quick thinking and puzzle solving saved you from lockdown.
+      </p>
+
+    </div>
+
+    <div class="button-row">
+
+      <a href="index.html" class="menu-btn">Main Menu</a>
+
+      <a href="game.html?start=true" class="menu-btn start-link">Play Again</a>
+	  
+
+    </div>
+
+  </section>
+
+</main>
+<audio id="successSound">
+  <source src="success2.mp3" type="audio/mpeg">
+</audio>
+<audio id="successSound2">
+  <source src="success.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("load", function () {
+  const shouldPlay = sessionStorage.getItem("playSuccessSound");
+
+ if (shouldPlay === "true") {
+    const sound1 = document.getElementById("successSound");
+    const sound2 = document.getElementById("successSound2");
+
+    if (sound1) {
+      sound1.play().catch(function () {
+        console.log("First sound was blocked.");
+      });
+    }
+
+    if (sound2) {
+      sound2.play().catch(function () {
+        console.log("Second sound was blocked.");
+      });
+    }
+
+    sessionStorage.removeItem("playSuccessSound");
+  }
+});
+</script>
+
+</body>
+</html>
