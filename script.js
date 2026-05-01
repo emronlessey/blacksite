@@ -78,14 +78,14 @@ function renderLog() {
 }
 
 function saveGame(silent = false) {
-  localStorage.setItem(SAVE_KEY, JSON.stringify(game));
+  sessionStorage.setItem(SAVE_KEY, JSON.stringify(game));
   if (!silent) {
     addLog("Game saved.", "good");
   }
 }
 
 function loadGame() {
-  const saved = localStorage.getItem(SAVE_KEY);
+  const saved = sessionStorage.getItem(SAVE_KEY);
 
   if (!saved) {
     return false;
@@ -437,7 +437,7 @@ function handleReset() {
   timeDisplay.classList.remove("timer-warning2");
   timeDisplay.textContent = formatTime(TOTAL_TIME);
 
-  localStorage.removeItem(SAVE_KEY);
+  sessionStorage.removeItem(SAVE_KEY);
   game = createNewGame();
   addLog("Game reset.", "warn");
   render();
