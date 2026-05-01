@@ -476,3 +476,7 @@ if (loadGame()) {
 }
 
 render();
+
+window.addEventListener("pagehide", function () {
+  sessionStorage.removeItem(SAVE_KEY);
+});
